@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: carrinho-ms
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/carrinho-ms-db?createDatabaseIfNotExist=true
+    password: 
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    
+server:
+  port: 9001
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
